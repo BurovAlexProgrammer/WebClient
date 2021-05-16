@@ -1,4 +1,5 @@
 import { Navbar, NavLink, Nav} from 'react-bootstrap';
+import { ThemeToggle } from './ThemeToggle/ThemeToggle';
 
 export const Header = () => {
     return (
@@ -9,6 +10,7 @@ export const Header = () => {
             <NavLink href='#home' className='text-light'> Home </NavLink>
             <NavLink href='#link' className='text-light'> Link </NavLink>
           </Nav>
+          <ThemeToggle/>
         </Navbar>    
       </header>
     );

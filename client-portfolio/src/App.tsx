@@ -16,11 +16,11 @@ function App() {
   return (
     <div className="App">
       <link rel='stylesheet' type='text/css' href={ctx.stylePath}/>
+      <link rel='stylesheet' type='text/css' href='./styles/toggle.css'/>
       <Header/>
       <main role="main" className="container">
         <br/>
         <Button onClick={onButtonClick}>Test button</Button>
-
       </main>
       <Footer fixed={true}/>
     </div>
