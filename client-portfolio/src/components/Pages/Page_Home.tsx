@@ -7,8 +7,10 @@ export const Page_Home = () => {
     return (
         <>
             <br/>
-            <Jumbotron className={`jumbotron ${style.mainJumboStyle}`}>
-
+            <Jumbotron className={`${style.mainJumboStyle}`}>
+                <p>
+                    <h1 className='display-1 text-white'>Hello world!</h1>
+                </p>
             </Jumbotron>
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             <img src={logo} className="App-logo" alt="logo"/>
