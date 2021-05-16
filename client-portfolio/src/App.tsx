@@ -4,6 +4,7 @@ import './App.scss';
 import {Button} from 'react-bootstrap';
 import AppContext from './contexts/AppContext';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -21,6 +22,7 @@ function App() {
         <Button onClick={onButtonClick}>Test button</Button>
 
       </main>
+      <Footer fixed={true}/>
     </div>
   );
 }
