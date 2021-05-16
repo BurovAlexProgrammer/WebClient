@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './logo.svg';
 import './App.scss';
 import {Button} from 'react-bootstrap';
+import AppContext from './contexts/AppContext';
 
 function App() {
+  const ctx = useContext(AppContext);
+
+  const onButtonClick = () => {
+    alert(ctx.stylePath);
+  }
+
   return (
     <div className="App">
-      <link rel='stylesheet' type='text/css' href='./themes/dark/bootstrap.css'/>
+      <link rel='stylesheet' type='text/css' href={ctx.stylePath}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +27,7 @@ function App() {
         >
           Learn React
         </a>
-        <Button >Test button</Button>
+        <Button onClick={onButtonClick}>Test button</Button>
       </header>
     </div>
   );
