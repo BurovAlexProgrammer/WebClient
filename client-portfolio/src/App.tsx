@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Page_Home } from './components/Pages/Page_Home';
 import { HashRouter as Router, Route, Switch} from 'react-router-dom';
+import { Page_NotFound } from 'components/Pages/Page_NotFound';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -23,7 +24,7 @@ function App() {
           <Switch>
             <Route exact path="/home" component={Page_Home}/>
             <Route path="/link" component={() => {return <h1>Link</h1>;}}/>
-            <Route path="/*" component={() => {return <h1>Page not found</h1>;}} />
+            <Route path="/*" component={Page_NotFound}/>
           </Switch>
         </main>
         <Footer fixed={true}/>
