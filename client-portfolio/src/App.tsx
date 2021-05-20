@@ -4,14 +4,14 @@ import AppContext from './contexts/AppContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Page_Home } from './components/Pages/Page_Home';
-import { BrowserRouter as Router, Route, Switch, useLocation} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Page_NotFound } from 'components/Pages/Page_NotFound';
 
 function App() {
   const ctx = useContext(AppContext);
-  const onButtonClick = () => {
-    alert(ctx.stylePath);
-  }
+  // const onButtonClick = () => {
+  //   alert(ctx.stylePath);
+  // }
 
   return (
       <div className="App">
