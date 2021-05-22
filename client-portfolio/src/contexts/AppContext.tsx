@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
   const AppContext = createContext<IAppContext>(null);
 
   export const AppProvider : React.FC = ({children}) => {
-    //const [temp, setTemp] = useState<TempClass[]>();
+    //const [temp, setTemp] = useState<TempClass[]>([]);
     const lightThemePath = './themes/light/bootstrap.css';
     const darkThemePath = './themes/dark/bootstrap.css';
     const [darkMode, setDarkMode] = useState(false);
@@ -29,6 +29,7 @@ import { createContext, useState } from "react";
         stylePath,
         switchThemeMode,
         refresh,
+        //tempFunc,
     };
 
     return (
@@ -44,6 +45,7 @@ import { createContext, useState } from "react";
     stylePath: string;
     switchThemeMode: () => void;
     refresh: () => void;
+    //tempFunc: () => void;
   }
   
   export default AppContext;
