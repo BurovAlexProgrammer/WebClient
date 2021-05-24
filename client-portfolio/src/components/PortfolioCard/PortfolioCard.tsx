@@ -20,7 +20,7 @@ export const PortfolioCard: React.FC<Props> = ({
                             <p>{description}</p>
                         </div>
                         <div className='row d-flex align-items-end flex-column mr-1 text-bottom'>
-                            { url && <Link to={url || '#'} className='stretched-linkd-flex'>More Details</Link> }
+                            { url && <Link to={url || '#'} className='stretched-link d-flex'>More Details</Link> }
                         </div>
                     </div>
                 </Card>
