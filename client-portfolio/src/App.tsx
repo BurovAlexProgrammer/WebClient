@@ -7,6 +7,7 @@ import { Page_Home } from './components/Pages/Page_Home';
 import { Route, Switch } from 'react-router-dom';
 import { Page_NotFound } from 'components/Pages/Page_NotFound';
 import { Page_Portfolio } from 'components/Pages/Page_Portfolio';
+import { Page_PortfolioWork } from 'components/Pages/Page_PortfolioWork';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -22,6 +23,7 @@ function App() {
         <main role="main" className="container">
               <Switch>
                 <Route exact path="/home" component={Page_Home}/>
+                <Route path="/portfolio/:workName" component={Page_PortfolioWork}/>
                 <Route path="/portfolio" component={Page_Portfolio}/>
                 <Route path="/*" component={Page_NotFound}/>
               </Switch>
