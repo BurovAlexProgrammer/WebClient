@@ -19,6 +19,7 @@ function App() {
       <div className="App">
         <link rel='stylesheet' type='text/css' href={ctx.stylePath}/>
         <link rel='stylesheet' type='text/css' href='./styles/toggle.css'/>
+        <link rel='stylesheet' type='text/css' href='./styles/common.css'/>
         <Header/>
         <main role="main" className="container">
               <Switch>

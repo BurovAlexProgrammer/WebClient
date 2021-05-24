@@ -1,0 +1,10 @@
+.pf-icon-medium {
+    width: 70px;
+    height: 70px;
+    margin: 0.5rem !important
+}
+
+.pf-v-center {
+   display: flex;
+   align-items: center;
+}  
