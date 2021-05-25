@@ -1,12 +1,12 @@
 import { useParams } from "react-router";
-import { PortfolioPage_PortfolioSite } from "./PortfolioPages/PortfolioPage_PortfolioSite";
+import { PortfolioItem_PortfolioSite } from "./PortfolioPages/PortfolioItem_PortfolioSite";
 
 
 export const Page_PortfolioWork = () => {
     const params = useParams() as Params;
     const workName = params.workName;
     switch (workName) {
-        case 'portfolioSite': return <PortfolioPage_PortfolioSite/>;
+        case 'portfolioSite': return <PortfolioItem_PortfolioSite/>;
     }
     return (<p className='text-center display-1 font-weight-bold'>
                 Portfolio Work Item
