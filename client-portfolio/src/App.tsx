@@ -21,7 +21,7 @@ function App() {
         <link rel='stylesheet' type='text/css' href='./styles/toggle.css'/>
         <link rel='stylesheet' type='text/css' href='./styles/common.css'/>
         <Header/>
-        <main role="main" className="container">
+        <main role="main" className="container mb-5">
               <Switch>
                 <Route exact path="/home" component={Page_Home}/>
                 <Route path="/portfolio/:workName" component={Page_PortfolioWork}/>
