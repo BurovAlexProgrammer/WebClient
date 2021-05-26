@@ -20,7 +20,7 @@ export const PortfolioItem_PortfolioSite = () => {
                     <Image src={Paths.home_jumbotron} className='img-fluid mb-4'/>
                 </Col>
                 <Col className='col-4'>
-                    <p className='display-4 text-left'>Purpose</p> 
+                    <p className='display-4 text-left font-weight-bold'>Purpose</p> 
                     <p className='blockquote text-left'>
                         {/*
                             Я разрабатываю этот сайт для отображения своих работ и достижений и
@@ -37,12 +37,19 @@ export const PortfolioItem_PortfolioSite = () => {
             </Row>
             <Row>
                 <Col>
-                    <p className='display-4 text-left'><br/>Technology Stack</p>
+                    <p className='display-4 text-left font-weight-bold'><br/>Technology Stack</p>
                     <p className='blockquote text-left'>
                     {/* В проекте используется TypeScript, React, SCSS и будет взаимодействовать с другими моими проектами через API. */}
                     The project uses TypeScript, React, SCSS and will interact with my other projects through the API.
                     </p>
-                    <p className='display-4 text-left'><br/>Additionally</p>
+                    <p className='text-left'>
+                        <Icon src={Paths.icons.react} title='React'/>
+                        <Icon src={Paths.icons.typescript} title='TypeScript'/>
+                        <Icon src={Paths.icons.nodejs} title='Node JS'/>
+                        <Icon src={Paths.icons.sass} title='SASS'/>
+                        <Icon src={Paths.icons.api} title='Rest API'/>
+                    </p>
+                    <p className='display-4 text-left font-weight-bold'><br/>Additionally</p>
                     <p className='blockquote text-left'>
                     {/* Я решил опубликовать свои разработки на свой подкроватный сервер - это дешевле и веселее. */}
                     I decided to publish my developments on my bedside server - it's cheaper and more fun.
