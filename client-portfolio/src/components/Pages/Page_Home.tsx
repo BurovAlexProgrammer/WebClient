@@ -11,10 +11,8 @@ export const Page_Home = () => {
         <>
             <br/>
             <Jumbotron className={`${style.mainJumboStyle}`}>
-                <p>
-                    <p className='text-white text-left display-3 font-weight-bold'>Alexey's Portfolio</p>
-                    <p className='text-white text-left h3'>I'm Aleksei Burov - C# developer. I have created the portfolio to reach my dream - work on Unity 3D engine.</p>
-                </p>
+                <p className='text-white text-left display-3 font-weight-bold'>Alexey's Portfolio</p>
+                <p className='text-white text-left h3'>I'm Aleksei Burov - C# developer. I have created the portfolio to reach my dream - work on Unity 3D engine.</p>
             </Jumbotron>
             <p className='text-left display-3 font-weight-bold'>My Works</p>
             <PortfolioContent/>

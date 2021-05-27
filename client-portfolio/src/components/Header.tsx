@@ -1,4 +1,4 @@
-import { Navbar, NavLink, Nav} from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle/ThemeToggle';
 

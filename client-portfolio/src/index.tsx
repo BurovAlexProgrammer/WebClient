@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './contexts/AppContext';
 import { HashRouter as Router } from 'react-router-dom';
+import { CookiesProvider } from 'react-cookie';
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
         <AppProvider>
-          <App />
+          <CookiesProvider>
+            <App />
+          </CookiesProvider>
         </AppProvider>
       </Router>
   </React.StrictMode>,

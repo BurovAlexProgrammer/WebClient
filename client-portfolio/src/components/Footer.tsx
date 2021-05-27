@@ -1,5 +1,6 @@
 import { Paths } from 'common/paths';
 import {Container, Row, Col, Button} from 'react-bootstrap';
+import { useCookies } from 'react-cookie';
 import { Icon } from './Icon';
 
 export const Footer = (props: Props) => {
