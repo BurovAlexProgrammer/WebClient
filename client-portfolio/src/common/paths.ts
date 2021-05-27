@@ -6,6 +6,7 @@ import icon_nodejs from 'assets/img/icons/nodejs.png';
 import icon_api from 'assets/img/icons/gear.png';
 import icon_typescript from 'assets/img/icons/typescript.png';
 import icon_sass from 'assets/img/icons/sass.png';
+import icon_cookie from 'assets/img/icons/cookie.png';
 
 export const Paths = {
     icons: {
@@ -16,6 +17,7 @@ export const Paths = {
         api: icon_api,
         typescript: icon_typescript,
         sass: icon_sass,
+        cookie: icon_cookie,
     },
     home_jumbotron,
 };

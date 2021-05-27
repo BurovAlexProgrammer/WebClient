@@ -5,7 +5,7 @@ type Sizes = 'small' | 'medium' | 'large' | 'custom';
 
 export const Icon = (props: Props & React.HTMLProps<HTMLImageElement>) => {
     const defSize : Sizes = 'medium';
-    const sizeClass = props.iconSize === 'custom' ? '' : 'pf-icon-'+(props.size || defSize);
+    const sizeClass = props.iconSize === 'custom' ? '' : 'pf-icon-'+(props.iconSize || defSize);
     const highlightClass = props.highligth === undefined || props.highligth ? 'image-hover-highlight' : '';
     const roundedClass = props.rounded ? 'rounded' : '';
 
