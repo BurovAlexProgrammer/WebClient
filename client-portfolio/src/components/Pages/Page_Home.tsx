@@ -1,6 +1,5 @@
 import { PortfolioContent } from 'components/PortfolioContent';
 import AppContext from 'contexts/AppContext';
-import logo from 'logo.svg'; 
 import { useContext } from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
 import style from './Page_Home.module.scss';
@@ -18,7 +17,7 @@ export const Page_Home = () => {
             <PortfolioContent/>
             <Button onClick={(x) => {ctx.refresh();}}>Refresh</Button> 
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            <img src={logo} className="App-logo" alt="logo"/>
+            
             </a>
         </>
     );
