@@ -10,6 +10,7 @@ export const Header = () => {
           <Nav className="mr-auto">
             <Link  className='nav-link text-light' to='/home'>Home </Link>
             <Link  className='nav-link text-light' to='/portfolio'>Portfolio </Link>
+            <Link  className='nav-link text-light' to='/contact'>Contact </Link>
           </Nav>
           <ThemeToggle/>
         </Navbar>    
