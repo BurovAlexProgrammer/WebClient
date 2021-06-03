@@ -9,6 +9,7 @@ import { Page_NotFound } from 'components/Pages/Page_NotFound';
 import { Page_Portfolio } from 'components/Pages/Page_Portfolio';
 import { Page_PortfolioWork } from 'components/Pages/Page_PortfolioWork';
 import { Page_Contact } from 'components/Pages/Page_Contact';
+import { Container } from 'react-bootstrap';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -22,14 +23,16 @@ function App() {
         <link rel='stylesheet' type='text/css' href='./styles/toggle.css'/>
         <link rel='stylesheet' type='text/css' href='./styles/common.css'/>
         <Header/>
-        <main role="main" className="container mb-5">
-              <Switch>
-                <Route exact path="/home" component={Page_Home}/>
-                <Route path="/portfolio/:workName" component={Page_PortfolioWork}/>
-                <Route path="/portfolio" component={Page_Portfolio}/>
-                <Route path="/contact" component={Page_Contact}/>
-                <Route path="/*" component={Page_NotFound}/>
-              </Switch>
+        <main role="main" className="content mb-5">
+          <Container>
+            <Switch>
+              <Route exact path="/home" component={Page_Home}/>
+              <Route path="/portfolio/:workName" component={Page_PortfolioWork}/>
+              <Route path="/portfolio" component={Page_Portfolio}/>
+              <Route path="/contact" component={Page_Contact}/>
+              <Route path="/*" component={Page_NotFound}/>
+            </Switch>
+          </Container>
         </main>
         <Footer fixed={true}/>
       </div>

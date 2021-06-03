@@ -39,12 +39,12 @@ export const Footer = (props: Props) => {
     const footerContent = (
         <Row>
             <Col></Col>
-            <Col className='col-3' text-right>
+            <Col className='col-3'>
                 <p className='h6 text-light mt-3 mb-3'>
                 2021 &emsp; Aleksei Burov 
                 </p>
             </Col>
-            <Col className='col-1 pf-v-center' text-right> 
+            <Col className='col-1 pf-v-center'> 
                 <a href='https://reactjs.org/'>
                     <img src={logo} className="App-logo" alt="logo"/>
                 </a>
