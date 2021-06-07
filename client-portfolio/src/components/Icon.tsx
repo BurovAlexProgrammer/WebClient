@@ -14,7 +14,7 @@ export const Icon = (props: Props & React.HTMLProps<HTMLImageElement>) => {
     }
     const iconElement = <Image title={props.title} src={props.src} className={`${[props.className, sizeClass, highlightClass, roundedClass].join(' ')}`} width={props.width} height={props.height}/>;
 
-    return props.url ? <Link to={props.url || '#'}> {iconElement} </Link> : iconElement;
+    return props.url ? <a href={props.url || '#'} target={props.target} className='d-inline-block'> {iconElement} </a> : iconElement;
 }
 
 
