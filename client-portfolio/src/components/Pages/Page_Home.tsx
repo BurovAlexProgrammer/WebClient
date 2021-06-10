@@ -6,6 +6,22 @@ import style from './Page_Home.module.scss';
 
 export const Page_Home = () => {
     const ctx = useContext(AppContext);
+
+    const fetchData = () => {
+        fetch('/films', {
+            method: "POST",
+            body: JSON.stringify({temp: 'ttt'}),
+            headers: {
+              "Content-Type": "application/json"
+            },
+            credentials: "same-origin"
+          })
+        .then(res => res.json())
+        .then((result => {
+            alert('result: '+result.body)})
+            , (error => {alert('error: '+error)}));
+    };
+
     return (
         <>
             <br/>
@@ -16,6 +32,7 @@ export const Page_Home = () => {
             <p className='text-left display-3 font-weight-bold'>My Works</p>
             <PortfolioContent/>
             <Button onClick={(x) => {ctx.refresh();}}>Refresh</Button> 
+            <Button onClick={(x) => {fetchData();}}>Fetch</Button> 
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             
             </a>
