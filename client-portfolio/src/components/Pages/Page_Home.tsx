@@ -3,6 +3,7 @@ import AppContext from 'contexts/AppContext';
 import { useContext } from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
 import style from './Page_Home.module.scss';
+import { filmDTO } from 'burovalex-webdal/src/DAL';
 
 export const Page_Home = () => {
     const ctx = useContext(AppContext);
@@ -17,9 +18,14 @@ export const Page_Home = () => {
             credentials: "same-origin"
           })
         .then(res => res.json())
-        .then((result => {
-            alert('result: '+result.body)})
-            , (error => {alert('error: '+error)}));
+        .then(
+            (result => {
+                const film = result as filmDTO;
+                alert('result: '+film.title + '  ' + film.year)})
+            ,
+            (error => {
+                alert('error: '+error)
+            }));
     };
 
     return (
