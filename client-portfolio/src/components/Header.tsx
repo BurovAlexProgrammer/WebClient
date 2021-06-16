@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { ThemeToggle } from './ThemeToggle/ThemeToggle';
+import { LanguageDropdown } from './LanguageDropdown';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Header = () => {
     return (
@@ -13,7 +14,8 @@ export const Header = () => {
               <Link  className='nav-link text-light' to='/portfolio'>Portfolio </Link>
               <Link  className='nav-link text-light' to='/contact'>Contacts </Link>
             </Nav>
-            <ThemeToggle/>
+            <LanguageDropdown className='ml-3' onClick={() => alert()}/>
+            <ThemeToggle className='ml-3'/>
           </Container>
         </Navbar>    
       </header>

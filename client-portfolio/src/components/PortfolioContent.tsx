@@ -1,6 +1,6 @@
 import { Paths } from "common/paths";
 import { Row } from "react-bootstrap";
-import { PortfolioCard } from "./PortfolioCard/PortfolioCard";
+import { PortfolioCard } from "./PortfolioCard";
 
 
 export const PortfolioContent = () => {

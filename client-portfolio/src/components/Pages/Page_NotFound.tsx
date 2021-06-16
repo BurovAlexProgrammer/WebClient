@@ -1,7 +1,6 @@
 export const Page_NotFound = () => {
     const classNames404 = 'display-1 font-weight-bold';
-    return (<>
-            <p className={`${classNames404}`}>
+    return (<div className={`${classNames404}`}>
                 <div className='row'>
                     <div className='col'>
                         <p className='text-center'>
@@ -14,6 +13,5 @@ export const Page_NotFound = () => {
                         </p>
                     </div>
                 </div>
-            </p>
-        </>);
+            </div>);
 }

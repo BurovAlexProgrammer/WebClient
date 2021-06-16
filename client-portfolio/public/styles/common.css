@@ -58,3 +58,8 @@ html, body {
     -webkit-transition: all 0.16s;
     transition: all 0.16s;
 }
+
+.language-dropdown .dropdown-menu {
+    height: 10rem;
+    overflow-y: scroll;
+}

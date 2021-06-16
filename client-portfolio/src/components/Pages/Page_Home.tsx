@@ -3,7 +3,7 @@ import AppContext from 'contexts/AppContext';
 import { useContext } from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
 import style from './Page_Home.module.scss';
-import { filmDTO } from 'burovalex-webdal/src/DAL';
+import { filmDTO, localeDTO } from 'burovalex-webdal/DAL';
 
 export const Page_Home = () => {
     const ctx = useContext(AppContext);
@@ -21,7 +21,7 @@ export const Page_Home = () => {
         .then(
             (result => {
                 const film = result as filmDTO;
-                alert('result: '+film.title + '  ' + film.year)})
+                alert('result: '+film.description + '  ' + film.year)})
             ,
             (error => {
                 alert('error: '+error)
