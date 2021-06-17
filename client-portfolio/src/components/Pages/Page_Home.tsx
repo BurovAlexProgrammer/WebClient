@@ -3,30 +3,9 @@ import AppContext from 'contexts/AppContext';
 import { useContext } from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
 import style from './Page_Home.module.scss';
-import { filmDTO, localeDTO } from 'burovalex-webdal/DAL';
 
 export const Page_Home = () => {
     const ctx = useContext(AppContext);
-
-    const fetchData = () => {
-        fetch('/films', {
-            method: "POST",
-            body: JSON.stringify({temp: 'ttt'}),
-            headers: {
-              "Content-Type": "application/json"
-            },
-            credentials: "same-origin"
-          })
-        .then(res => res.json())
-        .then(
-            (result => {
-                const film = result as filmDTO;
-                alert('result: '+film.description + '  ' + film.year)})
-            ,
-            (error => {
-                alert('error: '+error)
-            }));
-    };
 
     return (
         <>
@@ -38,7 +17,7 @@ export const Page_Home = () => {
             <p className='text-left display-3 font-weight-bold'>My Works</p>
             <PortfolioContent/>
             <Button onClick={(x) => {ctx.refresh();}}>Refresh</Button> 
-            <Button onClick={(x) => {fetchData();}}>Fetch</Button> 
+            <Button onClick={(x) => {}}>Fetch</Button> 
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             
             </a>

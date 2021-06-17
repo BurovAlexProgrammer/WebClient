@@ -10,6 +10,7 @@ import { Page_Portfolio } from 'components/Pages/Page_Portfolio';
 import { Page_PortfolioWork } from 'components/Pages/Page_PortfolioWork';
 import { Page_Contact } from 'components/Pages/Page_Contact';
 import { Container } from 'react-bootstrap';
+import { FilmSearching_HomePage } from 'components/Pages/PortfolioWorks/FilmSearching/HomePage';
 
 function App() {
   const ctx = useContext(AppContext);
@@ -30,6 +31,7 @@ function App() {
               <Route path="/portfolio/:workName" component={Page_PortfolioWork}/>
               <Route path="/portfolio" component={Page_Portfolio}/>
               <Route path="/contact" component={Page_Contact}/>
+              <Route path="/film-search-api" component={FilmSearching_HomePage}/>
               <Route path="/*" component={Page_NotFound}/>
             </Switch>
           </Container>
