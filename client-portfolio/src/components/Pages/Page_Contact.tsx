@@ -1,9 +1,8 @@
 import { Paths } from "common/paths";
 import { Icon } from "components/Icon";
-import { PortfolioContent } from "components/PortfolioContent";
 import AppContext from "contexts/AppContext";
 import { useContext, useState } from "react";
-import { Button, Col, Image, Row } from "react-bootstrap";
+import { Button, Col, Row, Container } from "react-bootstrap";
 
 export const Page_Contact = () => {
     const ctx = useContext(AppContext);
@@ -19,7 +18,7 @@ export const Page_Contact = () => {
     }
 
     return (
-        <div>
+        <Container>
             <Row className='mt-5 mb-5'>
                 <Col>
                     <p className='text-left display-3 font-weight-bold'>My Contacts</p>
@@ -59,6 +58,6 @@ export const Page_Contact = () => {
                     }
                 </Col>
             </Row>
-        </div>
+        </Container>
     );
 }

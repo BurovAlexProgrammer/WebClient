@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import { PortfolioItem_PortfolioSite } from "./PortfolioPages/PortfolioItem_PortfolioSite";
 
@@ -8,12 +9,15 @@ export const Page_PortfolioWork = () => {
     switch (workName) {
         case 'portfolioSite': return <PortfolioItem_PortfolioSite/>;
     }
-    return (<p className='text-center display-1 font-weight-bold'>
+    return (
+        <Container>
+            <p className='text-center display-1 font-weight-bold'>
                 Portfolio Work Item
                 <br/>
                 <span className='text-secondary'> Not </span>
                 <span className='text-primary'> Found </span>
-            </p>);
+            </p>
+        </Container>);
 }
 
 interface Params {

@@ -6,8 +6,8 @@ import { createContext, useState } from "react";
     //const [temp, setTemp] = useState<TempClass[]>([]);
     const lightThemePath = './themes/light/bootstrap.css';
     const darkThemePath = './themes/dark/bootstrap.css';
-    const [darkMode, setDarkMode] = useState(false);
-    const [stylePath, setStylePath] = useState(lightThemePath);
+    const [darkMode, setDarkMode] = useState(true);
+    const [stylePath, setStylePath] = useState(darkThemePath);
     const [,update] = useState(new Date());
 
     const switchThemeMode = () => {

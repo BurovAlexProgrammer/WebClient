@@ -1,6 +1,10 @@
+import { Container } from "react-bootstrap";
+
 export const Page_NotFound = () => {
     const classNames404 = 'display-1 font-weight-bold';
-    return (<div className={`${classNames404}`}>
+    return (
+        <Container>
+            <div className={`${classNames404}`}>
                 <div className='row'>
                     <div className='col'>
                         <p className='text-center'>
@@ -13,5 +17,6 @@ export const Page_NotFound = () => {
                         </p>
                     </div>
                 </div>
-            </div>);
+            </div>
+        </Container>);
 }

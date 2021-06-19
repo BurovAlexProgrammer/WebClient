@@ -1,14 +1,14 @@
 import { PortfolioContent } from 'components/PortfolioContent';
 import AppContext from 'contexts/AppContext';
 import { useContext } from 'react';
-import {Button, Jumbotron} from 'react-bootstrap';
+import {Button, Container, Jumbotron} from 'react-bootstrap';
 import style from './Page_Home.module.scss';
 
 export const Page_Home = () => {
     const ctx = useContext(AppContext);
 
     return (
-        <>
+        <Container>
             <br/>
             <Jumbotron className={`${style.mainJumboStyle}`}>
                 <p className='text-white text-left display-3 font-weight-bold'>Alexey's Portfolio</p>
@@ -21,6 +21,6 @@ export const Page_Home = () => {
             <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             
             </a>
-        </>
+        </Container>
     );
 }

@@ -1,10 +1,10 @@
 import { Paths } from "common/paths";
 import { Icon } from "components/Icon";
-import { Col, Image, Row } from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 
 export const PortfolioItem_PortfolioSite = () => {
     return (
-        <div>
+        <Container>
             <Row>
                 <Col className='col-8'>
                     <br/> 
@@ -56,6 +56,6 @@ export const PortfolioItem_PortfolioSite = () => {
                     </p>
                 </Col>
             </Row>
-        </div>
+        </Container>
     );
 }
