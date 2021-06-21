@@ -1,8 +1,9 @@
-import { Col, Container, DropdownButton, Row } from 'react-bootstrap';
+import { Col, Container, DropdownButton, Row, InputGroup, Button, FormGroup, Form } from 'react-bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import { genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
 import { useEffect, useState } from "react";
+import { FormControl } from 'react-bootstrap';
 
 export const FilmAPI_HomePage = () => {
     const [ genres, setGenres] = useState<genreDTO[]>([]);
@@ -15,24 +16,37 @@ export const FilmAPI_HomePage = () => {
     }, [selectedGenreId]);
 
     const genreItems = genres.map(x => {
-        return <DropdownItem key={x.id} eventKey={x.id} active={x.id === selectedGenreId}>
+        return <option key={x.id} value={x.id}>
             {x.name}
-        </DropdownItem>
+        </option>
     });
 
     return (<div>
-                <Col className='col-3 bg-primary'>
-                    <Row>
-                        <DropdownButton title='Genres' disabled={genres.length === 0} onSelect={onSelectGenre}>
-                            {genreItems}
-                        </DropdownButton>
-                    </Row>
-                </Col>
-                <Col className='col-9'>
-                    <Row>
-
-                    </Row>
-                </Col>
+                <Row className='mt-1 mb-1 container-fluid'>
+                    <Col className='col-4 bg-primary d-flex'>
+                        <div className='container vertical-left'>
+                            <p className='h2 mt-4 mb-4 text-light'>Search Film</p>
+                            <FormGroup as={Row} className='mb-4'> 
+                                <FormControl className='col-8'
+                                    placeholder='Seach Query'
+                                    aria-label='Seach Query'
+                                    aria-describedby='searchQuery'/>
+                                    <Button className='btn-secondary ml-2 col-3'>Search</Button>
+                            </FormGroup>
+                            <FormGroup as={Row} className='mb-4'>
+                                <Form.Label column sm="4" className='text-left'>Genres</Form.Label>
+                                <Col sm="8">
+                                    <Form.Control as="select" disabled={genres.length === 0} onChange={onSelectGenre}>
+                                        {genreItems}
+                                    </Form.Control>
+                                </Col>
+                            </FormGroup>
+                        </div>
+                    </Col>
+                    <Col className='col-8'>
+                        
+                    </Col>
+                </Row>
             </div>);
 
     function fetchGenres() {
@@ -44,6 +58,7 @@ export const FilmAPI_HomePage = () => {
         .then(
             (result => {
                 let _genres = result as genreDTO[];
+                _genres.unshift({id: 0, name: '  *  '});
                 _genres = _genres.map(x => {
                     x.name = CapitalizeString(x.name);
                     return x;
@@ -57,7 +72,7 @@ export const FilmAPI_HomePage = () => {
         );
     }
 
-    function onSelectGenre(genreId) {
-        setSelectedGenreId(Number(genreId || 0));
+    function onSelectGenre(event) {
+        setSelectedGenreId(Number(event.target.value || 0));
     }
 }
