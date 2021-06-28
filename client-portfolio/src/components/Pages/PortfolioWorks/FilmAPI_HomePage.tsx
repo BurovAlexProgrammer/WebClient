@@ -1,5 +1,5 @@
-import { Col, Container, DropdownButton, Row, InputGroup, Button, FormGroup, Form } from 'react-bootstrap';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import { Col, Container, DropdownButton, Row, Button, FormGroup, Form } from 'react-bootstrap';
+import { LanguageDropdown } from 'components/LanguageDropdown';
 import { genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
 import { useEffect, useState } from "react";
@@ -25,7 +25,8 @@ export const FilmAPI_HomePage = () => {
                 <Row className='mt-1 mb-1 container-fluid'>
                     <Col className='col-4 bg-primary d-flex'>
                         <div className='container vertical-left'>
-                            <p className='h2 mt-4 mb-4 text-light'>Search Film</p>
+                            <LanguageDropdown className='mt-2' onClick={() => alert()}/>
+                            <p className='h2 mt-2 mb-4 text-light'>Search Film</p>
                             <FormGroup as={Row} className='mb-4'> 
                                 <FormControl className='col-8'
                                     placeholder='Seach Query'

@@ -36,7 +36,7 @@ export const LanguageDropdown = (props: Props & React.HTMLAttributes<Dropdown>) 
                 title={currLocaleTitle}
                 onSelect={changeLocale}
                 size='sm'
-                className='language-dropdown'>
+                className={`language-dropdown ${props.className}`}>
                         {items}
             </DropdownButton>;
 }

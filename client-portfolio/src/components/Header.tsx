@@ -14,7 +14,6 @@ export const Header = () => {
               <Link  className='nav-link text-light' to='/portfolio'>Portfolio </Link>
               <Link  className='nav-link text-light' to='/contact'>Contacts </Link>
             </Nav>
-            <LanguageDropdown className='ml-3' onClick={() => alert()}/>
             <ThemeToggle className='ml-3'/>
           </Container>
         </Navbar>    
