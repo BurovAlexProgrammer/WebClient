@@ -12,6 +12,7 @@ export const FilmAPI_HomePage = () => {
     const [ genres, setGenres] = useState<genreDTO[]>([]);
     const [ searchQuery, setSearchQuery ] = useState('');
     const [ selectedGenreId, setSelectedGenreId] = useState<number>(0);
+    const [ isIncludeAdult, setIsIncludeAdult ] = useState(false);
     const [ locale, ] = useState(cookies[CookieKeys.currLocale] || 'en') ;
 
     if (genres.length === 0) fetchGenres(locale);
@@ -27,7 +28,7 @@ export const FilmAPI_HomePage = () => {
     });
 
     const searchFilm = () => {
-        fetchSearchFilm(searchQuery,locale);
+        fetchSearchFilms(searchQuery, locale, isIncludeAdult);
     }
 
     return (<div>
@@ -85,7 +86,12 @@ export const FilmAPI_HomePage = () => {
         );
     }
 
-    function fetchSearchFilm(query:string, locale:string) {
-
+    function fetchSearchFilms(_query:string, _locale:string, _adult:boolean, _page?:number) {
+        fetch(`/movie-api/films/${_locale}/${_query}/${_adult}${_page ? '/'+_page : ''}`, {
+            method: "GET",
+            headers: {"Content-Type": "application/json"},
+        }).then(response => {
+            const temp = response;
+        });
     }
 }
