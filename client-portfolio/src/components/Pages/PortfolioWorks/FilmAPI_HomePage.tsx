@@ -4,12 +4,17 @@ import { genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
 import { useEffect, useState } from "react";
 import { FormControl } from 'react-bootstrap';
+import { useCookies } from 'react-cookie';
+import { CookieKeys } from 'common/cookies';
 
 export const FilmAPI_HomePage = () => {
+    const [ cookies ] = useCookies();
     const [ genres, setGenres] = useState<genreDTO[]>([]);
+    const [ searchQuery, setSearchQuery ] = useState('');
     const [ selectedGenreId, setSelectedGenreId] = useState<number>(0);
+    const [ locale, ] = useState(cookies[CookieKeys.currLocale] || 'en') ;
 
-    if (genres.length === 0) fetchGenres();
+    if (genres.length === 0) fetchGenres(locale);
 
     useEffect(() => {
         const temp = selectedGenreId;
@@ -21,6 +26,10 @@ export const FilmAPI_HomePage = () => {
         </option>
     });
 
+    const searchFilm = () => {
+        fetchSearchFilm(searchQuery,locale);
+    }
+
     return (<div>
                 <Row className='mt-1 mb-1 container-fluid'>
                     <Col className='col-4 bg-primary d-flex'>
@@ -31,14 +40,17 @@ export const FilmAPI_HomePage = () => {
                                 <FormControl className='col-8'
                                     placeholder='Seach Query'
                                     aria-label='Seach Query'
-                                    aria-describedby='searchQuery'/>
-                                    <Button className='btn-secondary ml-2 col-3'>Search</Button>
+                                    aria-describedby='searchQuery'
+                                    onChange={(event) => setSearchQuery(event.target.value)}/>
+                                    <Button className='btn-secondary ml-2 col-3' onClick={searchFilm}>Search</Button>
                             </FormGroup>
                             <FormGroup as={Row} className='mb-4'>
                                 <Form.Label column sm="4" className='text-left'>Genres</Form.Label>
                                 <Col sm="8">
-                                    <Form.Control as="select" disabled={genres.length === 0} onChange={onSelectGenre}>
-                                        {genreItems}
+                                    <Form.Control as="select" 
+                                        disabled={genres.length === 0} 
+                                        onChange={(event) => setSelectedGenreId(Number(event.target.value || 0))}>
+                                            {genreItems}
                                     </Form.Control>
                                 </Col>
                             </FormGroup>
@@ -50,8 +62,8 @@ export const FilmAPI_HomePage = () => {
                 </Row>
             </div>);
 
-    function fetchGenres() {
-        fetch('/movie-api/genres/ru', {
+    function fetchGenres(_locale:string) {
+        fetch(`/movie-api/genres/${_locale}`, {
             method: "GET",
             headers: {"Content-Type": "application/json"},
         })
@@ -73,7 +85,7 @@ export const FilmAPI_HomePage = () => {
         );
     }
 
-    function onSelectGenre(event) {
-        setSelectedGenreId(Number(event.target.value || 0));
+    function fetchSearchFilm(query:string, locale:string) {
+
     }
 }
