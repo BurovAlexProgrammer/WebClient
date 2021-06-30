@@ -1,5 +1,6 @@
 import { Col, Container, DropdownButton, Row, Button, FormGroup, Form, Card, CardDeck } from 'react-bootstrap';
 import { LanguageDropdown } from 'components/LanguageDropdown';
+import { FilmCardDeck } from 'components/FilmSearchAPI/FilmCardDeck';
 import { filmDTO, filmResponseDTO, genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
 import { useEffect, useState } from "react";
@@ -59,9 +60,7 @@ export const FilmAPI_HomePage = () => {
                         </div>
                     </Col>
                     <Col className='col-8'>
-                        <CardDeck>
-                            {films.map(x => {return <Card>{x.title}</Card>}) }
-                        </CardDeck>
+                        <FilmCardDeck films={films}/>
                     </Col>
                 </Row>
             </div>);
