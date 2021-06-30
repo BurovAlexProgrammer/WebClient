@@ -1,6 +1,6 @@
-import { Col, Container, DropdownButton, Row, Button, FormGroup, Form } from 'react-bootstrap';
+import { Col, Container, DropdownButton, Row, Button, FormGroup, Form, Card, CardDeck } from 'react-bootstrap';
 import { LanguageDropdown } from 'components/LanguageDropdown';
-import { genreDTO } from "burovalex-webdal/DAL";
+import { filmDTO, filmResponseDTO, genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
 import { useEffect, useState } from "react";
 import { FormControl } from 'react-bootstrap';
@@ -14,6 +14,7 @@ export const FilmAPI_HomePage = () => {
     const [ selectedGenreId, setSelectedGenreId] = useState<number>(0);
     const [ isIncludeAdult, setIsIncludeAdult ] = useState(false);
     const [ locale, ] = useState(cookies[CookieKeys.currLocale] || 'en') ;
+    const [ films, setFilms ] = useState<filmDTO[]>([]);
 
     if (genres.length === 0) fetchGenres(locale);
 
@@ -58,7 +59,9 @@ export const FilmAPI_HomePage = () => {
                         </div>
                     </Col>
                     <Col className='col-8'>
-                        
+                        <CardDeck>
+                            {films.map(x => {return <Card>{x.title}</Card>}) }
+                        </CardDeck>
                     </Col>
                 </Row>
             </div>);
@@ -90,8 +93,12 @@ export const FilmAPI_HomePage = () => {
         fetch(`/movie-api/films/${_locale}/${_query}/${_adult}${_page ? '/'+_page : ''}`, {
             method: "GET",
             headers: {"Content-Type": "application/json"},
-        }).then(response => {
-            const temp = response;
+        })
+        .then(response => response.json())
+        .then(json => {
+            const result = json as filmResponseDTO;
+            const _films = result.results;
+            setFilms(_films);
         });
     }
 }
