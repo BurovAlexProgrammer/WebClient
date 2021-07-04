@@ -1,11 +1,9 @@
+import { useState } from 'react';
 import { Paths } from "common/paths";
 import { Icon } from "components/Icon";
-import AppContext from "contexts/AppContext";
-import { useContext, useState } from "react";
 import { Button, Col, Row, Container } from "react-bootstrap";
 
 export const Page_Contact = () => {
-    const ctx = useContext(AppContext);
     const [ showPhone, setShowPhone ] = useState(false);
     const [ showEmail, setShowEmail ] = useState(false);
 

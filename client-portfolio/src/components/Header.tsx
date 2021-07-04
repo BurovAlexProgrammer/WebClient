@@ -1,6 +1,5 @@
 import { Navbar, Nav, Container} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { LanguageDropdown } from './LanguageDropdown';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Header = () => {

@@ -6,7 +6,7 @@ import { Icon } from './Icon';
 import logo from 'logo.svg'; 
 
 export const Footer = (props: Props) => {
-    const [ cookies, setCookies, removeCookies ] = useCookies();
+    const [ cookies, setCookies, ] = useCookies();
     const acceptUseCookie = cookies[CookieKeys.acceptUseCookie];
     
     let classes = !acceptUseCookie ? 'fixed-bottom' : '';

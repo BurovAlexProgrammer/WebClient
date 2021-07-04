@@ -1,14 +1,12 @@
 import { PortfolioContent } from "components/PortfolioContent";
-import AppContext from "contexts/AppContext";
-import { useContext } from "react";
 import { Row, Container } from "react-bootstrap";
 
 export const Page_Portfolio = () => {
-    const ctx = useContext(AppContext);
+    // const ctx = useContext(AppContext);
 
-    const onClick = () => {
-        ctx.refresh();
-    }
+    // const onClick = () => {
+    //     ctx.refresh();
+    // }
 
     return (
         <Container>

@@ -1,4 +1,4 @@
-import { Col, Container, DropdownButton, Row, Button, FormGroup, Form } from 'react-bootstrap';
+import { Col, Row, Button, FormGroup, Form } from 'react-bootstrap';
 import { LanguageDropdown } from 'components/LanguageDropdown';
 import { genreDTO } from "burovalex-webdal/DAL";
 import { CapitalizeString } from 'common/useful'
@@ -12,7 +12,6 @@ export const FilmAPI_HomePage = () => {
     if (genres.length === 0) fetchGenres();
 
     useEffect(() => {
-        const temp = selectedGenreId;
     }, [selectedGenreId]);
 
     const genreItems = genres.map(x => {

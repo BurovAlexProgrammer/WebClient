@@ -14,7 +14,7 @@ export const PortfolioCard: React.FC<Props> = ({
                     <div className='card-header'>
                         <h2 className='font-weight-bold'>{title}</h2>
                     </div>
-                    <img className='card-img-center' src={imageUrl}></img>
+                    <img className='card-img-center' src={imageUrl} alt=''></img>
                     <div className='card-body'>
                         <div className='row'>
                             <p>{description}</p>

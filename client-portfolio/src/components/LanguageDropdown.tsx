@@ -7,7 +7,7 @@ import { CookieKeys } from 'common/cookies';
 import importedLocales from 'burovalex-webdal/langs.json';
 
 export const LanguageDropdown = (props: Props & React.HTMLAttributes<Dropdown>) => {
-    const [ cookies, setCookies, removeCookies ] = useCookies();
+    const [ cookies, setCookies, ] = useCookies();
     const [ currLocale, setCurrLocale ] = useState(cookies[CookieKeys.currLocale] || 'en') ;
     const [ currLocaleTitle, setCurrLocaleTitle ] = useState("English");
     const locales = (importedLocales as localeDTO[]).sort((a, b) => a.title > b.title ? 1 : -1);
