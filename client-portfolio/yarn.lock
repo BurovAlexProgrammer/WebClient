@@ -3163,9 +3163,9 @@ builtin-status-codes@^3.0.0:
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
 burovalex-webdal@^1.0.10:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/burovalex-webdal/-/burovalex-webdal-1.0.16.tgz#75943cef5ca72f93887e8124f655d573fe36eba4"
-  integrity sha512-E776Fd1ryEJQ46U00h4el3AQOkLLzbalOe7T8+ZZxPOUoXRjUfWO/J2UTaB2fzbHAbS9jqEDE4FajSvIpQJtWw==
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/burovalex-webdal/-/burovalex-webdal-1.0.17.tgz#7d36c87b6c5c4e27a9a9e1fbe66ff457809f66d4"
+  integrity sha512-WsjVvjNgATF4sbQfgFKUJ4XLLeH7SLdOL8U/YP+ELvZ85Z8C15fyiq3h3jQ5UTdS7mzygbgYO3ah98LL23wJOQ==
 
 bytes@3.0.0:
   version "3.0.0"
