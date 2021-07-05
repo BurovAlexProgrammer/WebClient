@@ -1,18 +1,18 @@
 import { Card, Container, Row, Col } from 'react-bootstrap';
 
 export const FilmCard = (props: Props) => {
-
+    const description = props.description.length > 150 ? props.description.slice(0,149)+'...' : props.description;
     return (
         <Card className='w-100'>
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
-                <Card.Text>{props.description}</Card.Text>
+                <Card.Text>{description}</Card.Text>
             </Card.Body>
             <Card.Footer>
                 <Container>
                     <Row>
-                        <Col>{props.year}</Col>
-                        <Col>{props.rating}</Col>
+                        <Col>{props.year || ' -- '}</Col>
+                        <Col className='text-right'>{props.rating || '--'}</Col>
                     </Row>
                 </Container>
             </Card.Footer>
