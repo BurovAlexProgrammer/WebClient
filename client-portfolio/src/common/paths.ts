@@ -11,6 +11,7 @@ import icon_github2 from 'assets/img/icons/github2.svg';
 import icon_telegram from 'assets/img/icons/telegram.svg';
 import icon_linkedin from 'assets/img/icons/linkedin.svg';
 import icon_whatsapp from 'assets/img/icons/whatsapp.svg';
+import film_card_blank from 'assets/img/movie_dark8.png';
 
 export const Paths = {
     icons: {
@@ -28,4 +29,5 @@ export const Paths = {
         whatsapp: icon_whatsapp,
     },
     home_jumbotron,
+    film_card_blank,
 };
